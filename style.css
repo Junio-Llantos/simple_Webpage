@@ -1,0 +1,129 @@
+/* Resetting default margin, padding, and box-sizing for all elements */
+* {
+  margin: 0; /* Reset margin to 0 for all elements */
+  padding: 0; /* Reset padding to 0 for all elements */
+  box-sizing: border-box; /* Use border-box box-sizing for all elements */
+}
+
+/* Styling for the body of the webpage */
+body {
+  width: 100%; /* Set the width to 100% */
+  height: 100%; /* Set the height to 100% */
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  letter-spacing: 1px; /* Add letter spacing of 1px */
+  background-color: #0b1030; /* Set the background color */
+}
+
+/* Styling for the login form container */
+.activity_form_container {
+  position: relative; /* Set the position to relative */
+  width: 400px; /* Set the width to 400px */
+  height: 800px; /* Set the height to 470px */
+  max-width: 470px; /* Set the maximum width to 400px */
+  max-height: 470px; /* Set the maximum height to 470px */
+  background: #0b1030; /* Set the background color */
+  border-radius: 50px 5px; /* Apply border radius */
+  display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center content vertically */
+  
+  justify-content: center; /* Center content horizontally */
+  overflow: hidden; /* Hide overflowing content */
+  margin-top: 70px; /* Add margin from the top */
+}
+
+/* Creating a rotating border effect around the login form container */
+.activity_form_container::before {
+  position: absolute; /* Set the position to absolute */
+  width: 170%; /* Set the width to 170% */
+  height: 170%; /* Set the height to 170% */
+  content: ''; /* Empty content */
+  background-image: conic-gradient(transparent, transparent, transparent, #ff0062); /* Apply conic gradient background */
+  animation: rotate_border 6s linear infinite; /* Apply animation */
+}
+
+/* Creating a second rotating border with a delay for a double border effect */
+.activity_form_container::after {
+  position: absolute; /* Set the position to absolute */
+  width: 170%; /* Set the width to 170% */
+  height: 170%; /* Set the height to 170% */
+  content: ''; /* Empty content */
+  background-image: conic-gradient(transparent, transparent, transparent, #0400ff); /* Apply conic gradient background */
+  animation: rotate_border 6s linear infinite; /* Apply animation */
+  animation-delay: -3s; /* Apply animation delay */
+}
+
+/* Keyframes animation to define the rotation */
+@keyframes rotate_border {
+  0% {
+    transform: rotate(0deg); /* Start rotation at 0 degrees */
+  }
+  100% {
+    transform: rotate(360deg); /* Rotate to 360 degrees */
+  }
+}
+
+/* Styling for the login form itself */
+.act_form {
+  position: absolute; /* Set the position to absolute */
+  content: ''; /* Empty content */
+  background-color: #0a154e; /* Set the background color */
+  border-radius: 50px 5px; /* Apply border radius */
+  inset: 5px; /* Set the position using inset */
+  padding: 50px 40px; /* Set padding */
+  z-index: 10; /* Set the stacking order */
+  color: #55bae2; /* Set text color */
+}
+
+/* Styling for images */
+img {
+  max-width: 100%; /* Set maximum image width to 100% */
+  height: 200px; /* Set image height to 200px */
+  display: block; /* Display images as block elements */
+  margin-top: -25px; /* Add margin from the top */
+  margin-bottom: 30px; /* Add margin from the bottom */
+  margin-left: auto; /* Auto horizontal margin on the left */
+  margin-right: auto; /* Auto horizontal margin on the right */
+}
+
+/* Styling for paragraphs */
+p {
+  text-indent: 50px; /* Set text indentation to 50px */
+  text-align: justify; /* Justify text alignment */
+}
+/*Add loader animation*/
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  column-gap: 5px;
+}
+
+.loader_bar {
+  display: inline-block;
+  width: 3px;
+  height: 10px;
+  background-color: #fff;
+  opacity: .5;
+  border-radius: 10px;
+  animation: scale-up 1500ms 
+  var(--d) linear infinite;
+}
+.loader_bar:nth-child(even){
+  height: 25px;
+}
+.loader_bar:nth-child(3){
+  height: 10px;
+}
+
+@keyframes scale-up {
+  25% {
+      opacity: 1;
+      scale: 1 1.5;
+  }
+  50% {
+      scale: 1;
+  }
+}
